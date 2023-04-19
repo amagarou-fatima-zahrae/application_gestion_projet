@@ -7,22 +7,19 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations. 
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('paiements', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('site_web');
-            $table->String('code_postal');
-            $table->string('tel');
+            $table->foreignId('facture_id')->constrained()->onDelete('cascade');
+            $table->String('mode_paiement');
             $table->string('compte_bancaire');
-            $table->string('fax');
-            $table->string('address');
+            $table->text('description');
+            $table->timestamps();
         });
     }
 
@@ -33,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('paiements');
     }
 };

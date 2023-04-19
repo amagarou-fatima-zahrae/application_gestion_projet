@@ -13,16 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('facturables', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('site_web');
-            $table->String('code_postal');
-            $table->string('tel');
-            $table->string('compte_bancaire');
-            $table->string('fax');
-            $table->string('address');
+            $table->integer('facture_id');
+            $table->integer('facturable_id');
+            $table->string('facturable_type');
+            $table->integer('quantite_vendue');
+            $table->timestamps();
         });
     }
 
@@ -33,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        //
     }
 };

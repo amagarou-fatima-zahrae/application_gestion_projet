@@ -1,0 +1,25 @@
+.facture .form-wrapper{
+flex:auto;
+}
+.facture .form-wrapper .card {
+    width:360px ;
+    padding: 20px;
+    background-color: rgb(0 0 0 /35%);
+
+}
+.facture .card-header{
+    margin: 30px 20px 0;
+    font-size: 1.1rem;
+    color: #94f7e6;
+    box-shadow: 2px 3px 8px #d3f7ff71;
+    
+}
+.facture .card-body{
+    flex-wrap:nowrap; 
+    padding: 40px 0;
+
+
+}
+form{
+    flex: 0 0 100%;
+}
